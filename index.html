@@ -99,12 +99,71 @@
 </head>
 <body>
 
-    <nav>
-        <a href="#home">HOME</a>
-        <a href="#download">DOWNLOAD</a>
-        <a href="#about">About PROJECT</a>
-    </nav>
+  <!-- Navigácia -->
+<nav>
+    <a href="javascript:void(0)" onclick="showTab('home')">HOME</a>
+    <a href="javascript:void(0)" onclick="showTab('download')">DOWNLOAD</a>
+    <a href="javascript:void(0)" onclick="showTab('about')">ABOUT PROJECT</a>
+</nav>
 
+<div class="glass-panel">
+    <!-- Sekcia HOME -->
+    <div id="home" class="tab-content active">
+        <h1>Windows 7 Resource Hub</h1>
+        <p>Everything for your nostalgic setup in one place.</p>
+        <p>Explore the beauty of the 2000s tech aesthetics through our curated collection.</p>
+    </div>
+
+    <!-- Sekcia DOWNLOAD -->
+    <div id="download" class="tab-content">
+        <h1>Downloads</h1>
+        <p>Get the latest pack featuring icons, sounds, and Aero effects.</p>
+        <a href="#" class="btn-download">DOWNLOAD PACK (.ZIP)</a>
+        <div style="margin-top: 20px; font-size: 0.8em; opacity: 0.7;">
+            Includes: High-res wallpapers, Shell styles, and Cursor sets.
+        </div>
+    </div>
+
+    <!-- Sekcia ABOUT -->
+    <div id="about" class="tab-content">
+        <h1>About Project</h1>
+        <p>This site is a tribute to the Frutiger Aero era (2004–2013).</p>
+        <p>Our goal is to preserve the glossy, glassy, and optimistic design language of Windows Vista and 7.</p>
+    </div>
+
+    <p class="footer-text">Created in the spirit of the Frutiger Aero aesthetic.</p>
+</div>
+
+<!-- JavaScript pre prepínanie kariet -->
+<script>
+    function showTab(tabId) {
+        // Skryť všetky sekcie
+        const contents = document.querySelectorAll('.tab-content');
+        contents.forEach(content => {
+            content.classList.remove('active');
+        });
+
+        // Zobraziť vybranú sekciu
+        document.getElementById(tabId).classList.add('active');
+    }
+</script>
+
+<style>
+    /* Pridaj toto do svojho <style> bloku */
+    .tab-content {
+        display: none; /* Skryje sekciu */
+        animation: fadeIn 0.5s; /* Pekný plynulý prechod */
+    }
+
+    .tab-content.active {
+        display: block; /* Zobrazí aktívnu sekciu */
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
     <div class="glass-panel" id="home">
         <h1>Aero7</h1>
         <p>"Your ultimate nostalgic setup hub."</p>
